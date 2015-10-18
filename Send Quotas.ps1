@@ -117,6 +117,8 @@ foreach ($m in $u)
                 $NewQuota= ($mailboxSize + $CloseToThreshold)/1024
 				write-host "User's new quota is now" $NewQuota
 				set-mailbox $m -prohibitSendQuota $NewQuota"GB"
+
+$NewQuota = (
 				}
 
 		#Otherwise the mailbox is fine.
