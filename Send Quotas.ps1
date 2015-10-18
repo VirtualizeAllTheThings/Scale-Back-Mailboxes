@@ -118,6 +118,14 @@ foreach ($m in $u)
 				write-host "User's new quota is now" $NewQuota
 				set-mailbox $m -prohibitSendQuota $NewQuota"GB"
 
+            }
+
+        Elseif (($MailboxSizeQuotaDifference -lt $closeToThreshold) -and ($mailboxSize -ge $MaxMailboxSize))
+        {
+                SendAlertToUser
+				SendAlertToAdmin
+				Write-Host "User mailbox is close to quota. Alert sent to user and Admins."
+        }
 
 		#Otherwise the mailbox is fine.
 		Else
