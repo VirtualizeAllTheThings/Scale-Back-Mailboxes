@@ -118,8 +118,6 @@ foreach ($m in $u)
 				write-host "User's new quota is now" $NewQuota
 				set-mailbox $m -prohibitSendQuota $NewQuota"GB"
 
-$NewQuota = (
-				}
 
 		#Otherwise the mailbox is fine.
 		Else
